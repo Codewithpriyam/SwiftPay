@@ -6,7 +6,7 @@ services:
     healthCheckPath: /
     envVars:
       - key: SPRING_DATASOURCE_URL
-        sync: false # Should be provided by Neon.tech
+        sync: false
       - key: SPRING_DATASOURCE_USERNAME
         sync: false
       - key: SPRING_DATASOURCE_PASSWORD
