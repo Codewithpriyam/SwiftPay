@@ -29,7 +29,6 @@ public class PaymentService {
     private final SmsNotificationService  smsNotificationService;
 
     @Transactional
-    @Transactional
     public Transaction processPayment(String rawPayload, String fromNumber) {
         log.info("Processing incoming payment from {}", fromNumber);
 
