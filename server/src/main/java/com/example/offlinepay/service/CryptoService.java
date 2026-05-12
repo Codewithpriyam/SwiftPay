@@ -40,6 +40,10 @@ public class CryptoService {
         return PUBLIC_KEY_B64;
     }
 
+    public String getServerPrivateKeyBase64() {
+        return PRIVATE_KEY_B64;
+    }
+
     public String decryptPayload(String encryptedBase64) throws Exception {
         byte[] cipherBytes = Base64.getDecoder().decode(encryptedBase64);
         Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
