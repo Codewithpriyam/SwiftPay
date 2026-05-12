@@ -3,7 +3,16 @@ services:
     name: swiftpay-backend
     env: docker
     plan: free
-    healthCheckPath: /
+    healthCheckPath: /api/status
+    initialDelaySeconds: 120
+    readinessProbe:
+      httpGet:
+        path: /api/status
+        port: 8080
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 3
     envVars:
       - key: SPRING_DATASOURCE_URL
         sync: false
