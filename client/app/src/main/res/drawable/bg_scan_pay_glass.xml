@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- REFINED: Removed solid glow block, using pill body with gradient stroke for glow feel -->
+
+    <!-- 1. Pill Body (Gradient Fill: Blue -> Teal) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <gradient
+                android:angle="0"
+                android:startColor="#3B82F6"
+                android:endColor="#22D3EE"
+                android:type="linear" />
+            <stroke android:width="1dp" android:color="#80FFFFFF" /> <!-- 50% white stroke -->
+        </shape>
+    </item>
+
+    <!-- 2. Inner Shine Overlay -->
+    <item android:top="4dp" android:left="30dp" android:right="30dp" android:bottom="45dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <solid android:color="#33FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Neon Glow (Simulated with semi-transparent layer) -->
+    <item>
+        <shape>
+            <solid android:color="#3322D3EE" />
+            <corners android:radius="40dp" />
+        </shape>
+    </item>
+
+    <!-- Main Button Body -->
+    <item android:top="2dp" android:bottom="2dp" android:left="2dp" android:right="2dp">
+        <shape>
+            <gradient
+                android:startColor="#33FFFFFF"
+                android:endColor="#1AFFFFFF"
+                android:angle="135"/>
+            <corners android:radius="38dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#66FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

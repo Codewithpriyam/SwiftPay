@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dark bottom edge for 3D depth -->
+    <item android:top="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <solid android:color="#006400" /> <!-- Dark Green -->
+        </shape>
+    </item>
+    
+    <!-- Main button body (gradient) -->
+    <item android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <gradient
+                android:angle="90"
+                android:startColor="#00A86B"
+                android:endColor="#2E8B57" />
+        </shape>
+    </item>
+
+    <!-- Top Highlight / Gloss for retro feel -->
+    <item android:bottom="30dp" android:left="8dp" android:right="8dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#99FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

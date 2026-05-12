@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_ios_glass"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SwiftPay"
+        android:textColor="#22D3EE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Successful"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/dialogAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹1.00"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/dialogRecipient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To: Kiran Devi"
+        android:textColor="#99FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#33FFFFFF"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/dialogRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ref: 205904308590"
+        android:textColor="#66FFFFFF"
+        android:textSize="12sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_retro_button_orange"
+        android:text="DONE"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+</LinearLayout>

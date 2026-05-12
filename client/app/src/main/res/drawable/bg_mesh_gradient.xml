@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base Deep Navy -->
+    <item>
+        <shape>
+            <gradient
+                android:type="linear"
+                android:startColor="#020617"
+                android:centerColor="#0A1F44"
+                android:endColor="#020617"
+                android:angle="135"/>
+        </shape>
+    </item>
+
+    <!-- Top Glow Accent -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="400dp"
+                android:centerX="80%"
+                android:centerY="20%"
+                android:startColor="#1A3B82F6"
+                android:endColor="@android:color/transparent"/>
+        </shape>
+    </item>
+</layer-list>

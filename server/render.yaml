@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: swiftpay-backend
+    env: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        sync: false # Should be provided by Neon.tech
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_FROM_NUMBER
+        sync: false
+      - key: JAVA_VERSION
+        value: 17

@@ -1,0 +1,43 @@
+# Android
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+*.apk
+*.ap_
+
+# Java / Maven
+target/
+*.class
+*.log
+*.jar
+*.war
+*.ear
+.mvn/
+
+# IDEs
+.vscode/
+.project
+.classpath
+.settings/
+
+# Misc
+*.png
+!README_assets/*.png
+emulator_log.txt
+absolute_fixed.png
+final_liquid.png
+final_nav.png
+fixed_final.png
+fixed_opacity.png
+fixed_overlap.png
+liquid_glass.png
+neon_ui.png
+radar.png
+really_final.png
+refined_main.png
+refined_pin.png
+project_details_workflow_v2.xml
+KeyGen.java

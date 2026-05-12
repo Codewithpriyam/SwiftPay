@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid base to ensure absolute concealment at the bottom -->
+    <item android:top="80dp">
+        <shape>
+            <solid android:color="#FF020617" />
+        </shape>
+    </item>
+
+    <!-- Transition gradient for soft blur feel -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#FF020617"
+                android:centerColor="#FF020617"
+                android:endColor="#00020617"
+                android:angle="90"
+                android:centerY="0.5" />
+        </shape>
+    </item>
+</layer-list>

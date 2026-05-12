@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_mesh_gradient">
+
+    <!-- FRAGMENT CONTAINER -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- SCRIM (Strong heavy blur simulation) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_nav_scrim" />
+
+    <!-- BOTTOM NAVIGATION (Liquid Glass Pill) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_nav_glass"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:elevation="24dp"
+        android:outlineProvider="background"
+        android:clipToOutline="true">
+
+        <!-- Home -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/iconHome"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/neon_cyan" />
+            <TextView
+                android:id="@+id/textHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@color/neon_cyan"
+                android:textSize="11sp"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- History -->
+        <LinearLayout
+            android:id="@+id/navHistory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/iconHistory"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_clock"
+                app:tint="#66FFFFFF" />
+            <TextView
+                android:id="@+id/textHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:textColor="#66FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- Profile -->
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/iconProfile"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_person"
+                app:tint="#66FFFFFF" />
+            <TextView
+                android:id="@+id/textProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="#66FFFFFF"
+                android:textSize="11sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

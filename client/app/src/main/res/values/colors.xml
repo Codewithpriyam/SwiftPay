@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deep Navy Backgrounds -->
+    <color name="bg_navy_deep">#020617</color>
+    <color name="bg_navy_mid">#0A1F44</color>
+    <color name="bg_navy_glow">#0F2D63</color>
+
+    <!-- Neon Accents -->
+    <color name="neon_blue">#3B82F6</color>
+    <color name="neon_cyan">#22D3EE</color>
+    <color name="neon_green">#00E676</color>
+
+    <!-- Glass & UI -->
+    <color name="glass_white">#1AFFFFFF</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="text_secondary">#99FFFFFF</color>
+    <color name="text_faded">#66FFFFFF</color>
+    <color name="error_glow">#FF4B4B</color>
+    <color name="white">#FFFFFF</color>
+</resources>
