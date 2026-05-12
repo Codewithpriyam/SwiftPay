@@ -25,7 +25,7 @@ public class PaymentController {
     private final HybridCryptoService  hybridCryptoService;
     private final IdempotencyService   idempotencyService;
 
-    @GetMapping("/hello")
+    @GetMapping("/status")
     public ResponseEntity<Map<String, String>> hello() {
         Map<String, String> response = new HashMap<>();
         response.put("status", "online");
