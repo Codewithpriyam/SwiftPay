@@ -134,10 +134,14 @@ public class MainActivity extends AppCompatActivity {
                 android.Manifest.permission.BLUETOOTH_ADVERTISE,
                 android.Manifest.permission.BLUETOOTH_CONNECT,
                 android.Manifest.permission.ACCESS_FINE_LOCATION,
-                android.Manifest.permission.NEARBY_WIFI_DEVICES
+                android.Manifest.permission.NEARBY_WIFI_DEVICES,
+                android.Manifest.permission.SEND_SMS
             }, 101);
         } else {
-            requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+            requestPermissions(new String[]{
+                android.Manifest.permission.ACCESS_FINE_LOCATION,
+                android.Manifest.permission.SEND_SMS
+            }, 101);
         }
     }
 
@@ -168,17 +172,44 @@ public class MainActivity extends AppCompatActivity {
 
                 // 4. Save and Gossip
                 com.example.offlinepay.mesh.PacketStore.savePacket(this, packet);
-                meshManager.broadcast(packet);
-
-                runOnUiThread(() -> {
-                    showStatus("✅ Payment Broadcasted", true);
-                    showSuccessDialog(amount, recipient);
-                });
+                
+                int peerCount = meshManager.getPeerCount();
+                if (peerCount > 0) {
+                    meshManager.broadcast(packet);
+                    runOnUiThread(() -> {
+                        showStatus("✅ Payment Broadcasted via Mesh", true);
+                        showSuccessDialog(amount, recipient);
+                    });
+                } else {
+                    // Fallback to Direct Device SMS
+                    runOnUiThread(() -> showStatus("📡 No Mesh Peers. Using Direct SMS...", true));
+                    sendDirectSMS(ciphertext);
+                    runOnUiThread(() -> {
+                        showStatus("✅ Payment Sent via SMS", true);
+                        showSuccessDialog(amount, recipient);
+                    });
+                }
             } catch (Exception e) {
-                Log.e("SwiftPay", "Mesh fail", e);
-                runOnUiThread(() -> showStatus("❌ Mesh Error: " + e.getMessage(), false));
+                Log.e("SwiftPay", "Payment fail", e);
+                runOnUiThread(() -> showStatus("❌ Error: " + e.getMessage(), false));
             }
         });
+    }
+
+    private void sendDirectSMS(String data) {
+        try {
+            // Replace with your real backend/gateway number
+            String destination = "+919000000000"; 
+            android.telephony.SmsManager smsManager = android.telephony.SmsManager.getDefault();
+            
+            // Large payloads need multipart SMS
+            java.util.ArrayList<String> parts = smsManager.divideMessage("SP:" + data);
+            smsManager.sendMultipartTextMessage(destination, null, parts, null, null);
+            Log.d("SwiftPay", "Direct SMS Sent to " + destination);
+        } catch (Exception e) {
+            Log.e("SwiftPay", "SMS fail", e);
+            runOnUiThread(() -> Toast.makeText(this, "SMS Permission Required", Toast.LENGTH_LONG).show());
+        }
     }
 
     private void attemptBridgeUpload() {

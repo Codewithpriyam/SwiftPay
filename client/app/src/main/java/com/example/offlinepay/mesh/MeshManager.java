@@ -32,6 +32,10 @@ public class MeshManager {
         this.listener = listener;
     }
 
+    public int getPeerCount() {
+        return connectedEndpoints.size();
+    }
+
     public void start() {
         startAdvertising();
         startDiscovery();
